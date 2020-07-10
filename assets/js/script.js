@@ -2,18 +2,24 @@ const root = document.documentElement;
 const btn = document.querySelector('#mode-toggle');
 var style = getComputedStyle(document.body);
 const lightDark = document.querySelectorAll('.light-dark');
-/*
-enuBtn = document.querySelector('div.menu-btn');
+const nav = document.querySelector('nav');
+const navItems = document.querySelector('.nav-items');
+
+menuBtn = document.querySelector('div.menu-btn');
 isOpen = false;
 menuBtn.addEventListener('click', () => {
 	if (!isOpen) {
 		menuBtn.classList.add('open');
+		nav.style.height = '30vh';
+		navItems.style.display = 'block';
 		isOpen = true;
 	} else {
 		menuBtn.classList.remove('open');
+		nav.style.height = '6vh';
+		navItems.style.display = 'none';
 		isOpen = false;
 	}
-});*/
+});
 
 var date = new Date();
 var year = date.getFullYear();
