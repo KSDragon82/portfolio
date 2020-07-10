@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --bg-color: #f3f3f3;
+    --box-color: rgb(247, 212, 212);
+	--font-color: #000;
+}
+
+body {
+	color: var(--font-color);
+    background-color: var(--bg-color);
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    background: transparent;
+}
+
+a {
+	color: var(--font-color);
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    width: 50%;
+    margin-left: auto;
+}
+
+nav ul li {
+    flex: 1;
+    margin: auto 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    padding: 2px;
+}
+
+nav ul li a:hover {
+    color: rgb(77, 76, 76);
+}
+
+nav ul li a::before,
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: crimson;
+    left: 0;
+    transform: scale(0);
+    transition: all .5s;
+}
+
+nav ul li a::before {
+    top: 0;
+    transform-origin: left;
+}
+
+nav ul li a::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+
+nav ul li a:hover::before,
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.content {
+    width: 80%;
+    height: 100%;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.skills {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 5px;
+	width: 100%;
+}
+
+.skill {
+    display: inline-block;
+    width: 200px;
+    height: 265px;
+    background-color: var(--box-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.icon {
+    position: relative;
+}
+
+.icon span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5px;
+}
+
+.about-me {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--box-color);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 0;
+	margin: 10px 0;
+}
+
+.about-me img {
+    width: 100px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer {
+    width: 100%;
+    height: 22vh;
+    background-color: #111;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer a:hover {
+    color: #d4d1d1;
+}
+
+footer h6 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.col-2 {
+    width: 45%;
+    display: inline-block;
+    padding: 10px;
+}
+
+.footer-icons {
+    display: block;
+    margin: 5px 0;
+}
+
+#mode-toggle {
+    cursor: pointer;
+}
+
+.menu-btn {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-in-out;
+    right: -75%;
+    top: 5px;
+    display: none;
+}
+
+.menu-btn__hamburger {
+    position: absolute;
+    width: 60px;
+    height: 6px;
+    background: #000;
+    border-radius: 10px;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__hamburger::before,
+.menu-btn__hamburger::after {
+    content: '';
+    width: 60px;
+    height: 6px;
+    background: #000;
+    border-radius: 10px;
+    position: absolute;
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__hamburger::before {
+    transform: translateY(-16px);
+}
+
+.menu-btn__hamburger::after {
+    transform: translateY(16px);
+}
+
+.menu-btn.open .menu-btn__hamburger {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.menu-btn.open .menu-btn__hamburger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__hamburger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+@media screen and (max-width: 750px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        height: 21vh;
+    }
+    .menu-btn {
+        display: flex;
+        flex-direction: column;
+    }
+    nav ul {
+        display: block;
+    }
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+		cursor: pointer;
+    }
+    .menu-btn.open {
+        height: 80vh;
+    }
+}
