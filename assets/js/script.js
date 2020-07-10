@@ -11,7 +11,10 @@ menuBtn.addEventListener('click', () => {
 	if (!isOpen) {
 		menuBtn.classList.add('open');
 		nav.style.height = '30vh';
-		navItems.style.display = 'block';
+		navItems.style.display = 'flex';
+		navItems.style.flexDirection = 'column';
+		navItems.style.justifyContent = 'center';
+		navItems.style.alignItems = 'center';
 		isOpen = true;
 	} else {
 		menuBtn.classList.remove('open');
